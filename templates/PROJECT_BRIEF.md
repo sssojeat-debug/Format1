@@ -1,40 +1,56 @@
-# Project Brief
+# Format1 Project Brief
 
-Fill what is known. Leave the rest blank for reasonable defaults.
+Fill only missing facts; reuse already supplied instructions and references. Format1 defaults: **9:16 vertical**, target **1080 × 1920**, VideoExpress generated clips **maximum 10 seconds**, continuous scenes, consistent character and voice locks, **no generated subtitles/text**, and final MP4 assembly if a completed film is requested.
 
 ## Story
-- Working title:
-- Premise / requested story:
-- Genre and tone:
-- Intended audience/platform:
-- Hook or must-keep moment:
-- Ending/payoff:
+- Title and premise:
+- Genre / tone / audience:
+- Visual style (cinematic 3D animation, realistic, etc.):
+- Key moments and ending:
+- Real-world movement and geography:
 
-## Production
-- Runtime:
-- Format: 9:16 vertical / 16:9 landscape / other
-- Resolution target:
-- Number of parts (for long projects):
-- Visual style:
-- Realistic human or animated:
-- Reference images/assets and where they are available:
+## Runtime and assets
+- Target total duration:
+- Parts / length per part (e.g., 12 parts × 5 min):
+- Individual clip duration: [supported selection, ≤10 seconds]
+- Minimum clip count: [ceiling(target seconds / clip seconds); 5 min requires at least 30 ten-second clips]
+- Canvas / target export: 9:16, 1080 × 1920
+- VideoExpress mode and confirmed capabilities:
+- Reference character images / project location:
+- Last-frame transfer: actual previous rendered final frame → next starting reference if supported; otherwise matching composition and verified join
 
-## Cast and audio
-- Characters / roles:
-- Character references:
-- Exact dialogue or key lines:
-- Language and accent:
-- Narration: yes/no; voice:
-- Music and sound effects:
+## Character and voice locks
+- Names and role reference IDs:
+- Exact faces / hair / body proportions / wardrobe / shoes:
+- Assigned voice ID/reference, language, accent, timbre, pitch, pacing and delivery for each character:
+- Exact dialogue (or short English dialogue instruction):
+- Narration: none unless explicitly requested
+- Props and physical movement continuity:
+- Background music / sound effects:
 
-## Text and subtitles
-- Generated on-screen text: none by default / specify
-- Generated subtitles: no by default / specify
-- Separate subtitle files wanted: no / Khmer / English / both / other
-- Subtitle placement and style:
+## Text policy
+- Generated subtitles/captions: **NO, STRICT**
+- Generated title cards/labels/logos/watermarks/readable text: **NO, STRICT**
+- Add separate subtitle files/layers only if user later requests them, outside generated clips
+- Reject any rendered clip with unexpected readable text or subtitle-like glyphs
 
-## Delivery
-- Desired output: story draft / production package / generated clips / assembled video
-- Review checkpoint before full production:
-- Must include:
-- Must avoid:
+## Scope and delivery
+- Requested now: story / clip prompts / generated clips / completed MP4
+- Required export: individual part MP4s / full movie MP4 / both
+- User-approved generation/credit scope:
+- Review checkpoints:
+- Saved project and output filenames:
+- Verify 9:16 MP4 export, target 1080 × 1920, H.264/AAC if supported
+- Additional must-have / must-avoid details:
+
+## Evidence-backed status
+- Script:
+- Prompts:
+- Submitted/generated/accepted clips:
+- Pairwise continuity checks:
+- Timeline assembly:
+- Exported MP4:
+- Export playback verification:
+- Blockers / unfinished steps:
+
+**Never label planned clips as generated or rendered clips as an exported movie.**
