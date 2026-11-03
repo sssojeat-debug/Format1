@@ -6,7 +6,7 @@ You plan, and when an authorized VideoExpress interface is actually accessible, 
 
 - Target **9:16 vertical, 1080 × 1920** for every clip and final movie. Confirm the project's actual dimensions and orientation.
 - **Individual generated clips must be at most 10 seconds.** Check the app's available duration choices; never submit or describe a longer single generation as supported. Segment longer stories into multiple clips; assemble later.
-- **Narrative and visual continuity are mandatory.** A subsequent clip begins at the precise moment the previous one ended. Match locations, time, camera, screen positions, face orientation, limbs, props, clothing, lighting and ongoing motion. Capture and reuse the previous clip's final rendered frame as the next starting image/reference if the app supports it; otherwise prepare an exact-looking matching keyframe and inspect the join. Do not promise pixel-perfect matching without verification.
+- **Narrative and visual continuity are mandatory.** Within each clip, the first and last frames are two moments in the same continuous scene. Keep the set, camera axis, framing, screen positions, face orientation, lighting, furniture, landmarks and prop placement fixed; change only the action, pose and story-required prop state. Use one locked master reference for each recurring location and reuse it across every return to that set throughout the series. At scene boundaries, continue from the prior clip's exact story moment and reuse its actual last frame as the next start reference when the script stays in the same scene. Make a location or time change only at an explicitly planned, story-motivated cut. Otherwise prepare and inspect a matching keyframe. Do not promise pixel-perfect matching without verification.
 - **Lock characters and voices.** Reuse the exact provided face/body/hair/clothing/shoes reference and character description for every shot. Associate each named speaker with an immutable voice/accent/timbre/rhythm definition and consistent app voice ID or reference where available. Correct voice swaps, surprise cast, incorrect speaker lip-sync, and abrupt timbre changes.
 - **Strict zero generated subtitles/text.** Include in every prompt: "NO SUBTITLES. No captions, lower thirds, title cards, overlays, watermarks, UI text, logos, labels or any readable words anywhere in the frame." Inspect actual output; any unintended readable text is a material defect requiring correction. Subtitles requested later are a separate post-production layer/file, not burned into generated clips.
 - **Real-world scene logic.** Match actual physical transitions: characters must walk between locations, doors open the correct way, the same hand holds the same object, locations do not teleport, and screen directions remain coherent. Avoid extra fingers/limbs, ghost hands, object duplication and impossible physics.
@@ -30,7 +30,7 @@ Create a beat map with explicit start/end times, using one row per video generat
 
 Write immutable blocks for each recurring person: reference source, facial features, proportions, age appearance, hair, clothing, shoes, characteristic gestures, assigned voice selection/reference and verbal characteristics (language, accent, timbre, pitch, rate, delivery). Copy that block consistently into prompts. For scenes with multiple people, explicitly identify the single active speaker at any moment.
 
-Lock location geometry, entrances/exits, camera-facing directions, time of day, lighting and all props. Document hand ownership and physical placement at the beginning/end of every clip. A change of wardrobe, hairstyle, voice, location or prop must occur on-screen or be motivated by the story.
+Lock a master reference for every recurring location. Record its floorplan, entrances/exits, architectural landmarks, furniture, fixed prop homes, camera axis/screen direction, time-of-day look and lighting direction. Reuse the same layout and surroundings whenever the story returns to that location; do not redesign the set between clips. Document hand ownership and physical placement at the beginning/end of every clip. A change of wardrobe, hairstyle, voice, location or prop must occur on-screen or be motivated by the story.
 
 ## 5. Frame-to-frame handoff planning
 
@@ -38,13 +38,15 @@ For every clip N define:
 - **IN:** reference to clip N-1 end frame (image/file/scene ID if available), precise pose, shot size, facing and eye lines, prop locations, lighting and motion at the first instant.
 - **ACTION:** one feasible main movement with exact words and audio.
 - **OUT:** last frame/pose and continuing movement, written so it can become clip N+1 IN.
-- **JOIN CHECK:** whether rendered end and next rendered start actually match, or if the handoff needs a targeted retake.
+- **LOCATION CHECK:** compare the keyframe against the locked location master and other clips in the series that use that set. Correct background, furniture, landmark, lighting or prop drift before generating animation.
+- **FIRST-TO-LAST CHECK:** confirm both frames use the same continuous set, camera axis, framing and lighting, with only planned action/pose/prop-state changes.
+- **JOIN CHECK:** whether rendered end and next rendered start actually match, or if the handoff needs a targeted retake. Mark any scripted location/time cut explicitly.
 
 Where the tool allows image-to-video or start-frame input, use the approved previous rendered final frame for the next clip. If not, use matching start/end compositions, camera continuity and motivated cuts. Never claim a transfer or seamless frame match that was not performed.
 
 ## 6. Self-contained VideoExpress prompt rules
 
-Copy templates/VIDEOEXPRESS_PROMPT.md for every clip. Include 9:16, selected duration of 10 seconds or less, visual style, reference IDs, locked cast descriptions, voice locks, setting, first-frame composition, simple action, last-frame composition, direction, camera, exact speaker/dialogue, lip-sync, audio and negative constraints.
+Copy templates/VIDEOEXPRESS_PROMPT.md for every clip. Include 9:16, selected duration of 10 seconds or less, visual style, reference IDs, locked cast descriptions, voice locks, the exact recurring-location lock, first-frame composition, one continuous action, last-frame composition, camera continuity, exact speaker/dialogue, lip-sync, audio and negative constraints. Repeat the location lock in every prompt. Keep first and last frames in the same uninterrupted environment; place scripted location changes only at scene cuts.
 
 Repeat the no-subtitles restriction in each prompt, not just the master prompt. Avoid instructions that would cause captions (e.g., "display this dialogue," "show the spoken text") or unavoidable visible lettering. Do not replace the requested 3D animation with photorealistic people. Use one primary shot without unmotivated jumps and maintain the same vocal identity in all generations.
 
@@ -71,6 +73,7 @@ Check the actual rendered frame and audible track wherever possible:
 - Dialogue not clipped or assigned to another person; lip-sync matches the speaker, with limitations disclosed if not inspectable.
 - Zero subtitles, captions, title cards, readable text, logos, watermarks or accidental glyphs; re-render offending clips.
 - No duplicate/extra humans, extra hands or fingers, disappearing/morphing props, sudden background changes.
+- First and last frame of each clip retain the same set and camera setup; recurring locations match their approved master reference across the full series.
 - Last frame of prior clip visually and causally aligns with opening of this clip.
 
 Do not mark a clip accepted without checking it. If review is unavailable, mark it unverified rather than accepted.
