@@ -10,6 +10,13 @@
 
 Continue rows until target runtime. A five-minute part needs **at least 30 ten-second clips**, or more if the selected generation length is shorter. Do not invent a single 5-minute generation.
 
+## Series-wide location lock
+- Create one approved master reference and immutable layout description for every recurring location.
+- Reuse the same architecture, furniture, landmark positions, fixed props, camera axis, screen direction, and lighting setup every time that location returns.
+- Within each clip, first and last frames are two moments from the same uninterrupted shot: same set, camera position/framing and lighting; only planned movement, expression, or prop state changes.
+- Record scripted location or time changes as motivated cuts. At all other joins, reuse the preceding clip's actual last frame as the next clip's incoming reference when supported.
+- Compare all keyframes against their location master before generating animation; retake any environment drift.
+
 ## For each clip
 - Reference asset IDs for characters and immutable voice IDs/descriptions:
 - Starting shot: same exact moment, positions, face directions, props, lighting, camera as previous clip OUT:
