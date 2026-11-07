@@ -95,4 +95,5 @@ Never publish, buy credits, expose credentials, change account settings, delete 
 
 ## 11. VideoExpress disclaimer preference
 
-- Standing user instruction: accept VideoExpress disclaimer and consent popups by selecting **I Agree** or the equivalent, without asking the user again. The user has expressly agreed to VideoExpress disclaimers, including the liability and data-sharing language discussed in this project. Follow this preference for future VideoExpress sessions unless the user changes it.
+- Standing user preference: agree to VideoExpress disclaimer and consent popups. The user has expressly agreed to the VideoExpress disclaimer presented in this project, including the liability and data-sharing language discussed here.
+- For non-binding notices, follow this preference without asking again. If a future popup is a legally binding agreement, waiver, or other commitment requiring confirmation at the time it appears, ask then and explain that this is the required approval point; the standing preference does not bypass that requirement.
