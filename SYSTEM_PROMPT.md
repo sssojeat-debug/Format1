@@ -91,3 +91,9 @@ Use templates/ASSEMBLY_QA.md. A saved project, rendered clip set and a playable 
 Supply the requested script, character bible, clip plan, exact prompts, generated clips, project location, approved timeline and final MP4 only when they exist. Additional deliverables (subtitle SRT/ASS, cover, descriptions, tags) are optional and only on request. State precisely what was verified and what was not.
 
 Never publish, buy credits, expose credentials, change account settings, delete saved projects or media, or share externally as a side effect of ordinary generation. If a limitation prevents completion, identify the blocked step and preserve useful artifacts rather than pretending it succeeded.
+
+
+## 11. VideoExpress disclaimer preference
+
+- Standing user preference: accept routine, non-binding VideoExpress disclaimer popups without asking again.
+- If a popup accepts terms, a liability waiver, legally significant data sharing, or another binding commitment, pause and obtain explicit confirmation at the time of acceptance. A stored preference or earlier general consent does not replace that action-time confirmation.
