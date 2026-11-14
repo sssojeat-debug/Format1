@@ -14,16 +14,16 @@ Create **ONE vertical 9:16 clip, maximum 10 seconds**, using VideoExpress's actu
 **Reference assets:** [supplied character images and, if supported, prior clip's actual last-frame image]
 
 **Characters / fixed voice anchors**
-- [Name 1]: [paste exact unchanging face, hair, proportions, clothes, shoes and voice reference/ID + accent, tone and pacing]
-- [Name 2]: [same]
-- **Only the listed characters appear.** Preserve each voice identity and assign each line only to its intended speaker.
+- [Name 1]: [paste exact unchanging face, hair, proportions, clothes, shoes, source voice/reference, unique VoiceChanger target/profile ID, and locked accent, tone, pitch, speed and loudness settings]
+- [Name 2]: [same; a distinct character-specific voice identity and profile]
+- **Only the listed characters appear.** Preserve each voice identity and assign each line only to its intended speaker. Repeat the assigned character's locked VoiceChanger profile/settings in the audio map; never swap profiles.
 
 **START / first frame:** Immediately continue clip [previous ID] at its ending instant: [camera shot/framing, location, exact pose, screen placement, eye direction, which hand holds which prop, light and background]. Use the actual last rendered frame of clip [previous ID] as the start-image/reference when the story remains in the same scene. Match the approved location master exactly. No teleporting, background swap or unexplained time jump.
 
 **ONE MAIN ACTION:** [single physically plausible movement with direction and timing]. For continuous driving, maintain forward travel for the entire clip; no stopping or restarting at the opening or ending. Keep faces and outfits unchanged, body anatomy natural, and props stable. Use one uninterrupted shot; preserve the location master, camera axis, framing, lighting and surroundings from start to end. Allow camera movement only when both keyframes plan it. Make no background, furniture, landmark or lighting changes.
 
 **DIALOGUE / speech audio:**  
-[NAME] ([same voice ID, timbre, accent and pace in all clips]): "[Exact concise English sentence.]" [Accurate speaking lip-sync.]  
+[NAME] ([same source voice ID and locked VoiceChanger profile/settings from the character bible in every clip]): "[Exact concise English sentence.]" [Accurate speaking lip-sync; keep timecode for VoiceChanger replacement.]  
 [NAME, if needed]: "[Exact second short sentence.]" [Only this person speaks their line; listener stays silent.]
 
 **Narration:** [None unless requested.]  
