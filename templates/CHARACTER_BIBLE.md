@@ -25,6 +25,16 @@ Create one immutable reference block per recurring character. Copy the same char
 |---|---|---|---|---|
 | [Name] | [ID or unavailable] | [Description] | [Description] | [Clip ID] |
 
+## Vehicle and travel lock (when applicable)
+- Exact vehicle make/model, color, body shape and exterior details:
+- Cabin layout, seat positions, steering-wheel side, upholstery and fixed interior details:
+- Camera position/mount and framing:
+- Road type, lane, travel direction, speed range and route progression:
+- Surroundings: terrain, roadside landmarks/vegetation/buildings, sky, weather, time and light:
+- Motion cues visible from the camera (road markings advance; roadside scenery moves backward):
+- Clip N ending travel state and clip N+1 starting travel state:
+- Stop/arrival/departure only when explicitly scripted:
+
 ## Location and recurring props
 - Location layout and architecture:
 - Lighting / time of day:
