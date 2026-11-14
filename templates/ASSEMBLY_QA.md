@@ -18,8 +18,9 @@ For each generated clip:
 - [ ] Vertical **9:16**, target 1080 × 1920, no unintended crop or stretch.
 - [ ] Correct visual style, especially cinematic 3D rather than accidental photorealism.
 - [ ] Same face, hair, proportions, clothing, shoes and accessories as approved references.
-- [ ] Same voice identity, accent, timbre and pacing as character bible; correct speaker.
-- [ ] Exact intended short dialogue and reasonable speaker lip-sync; no unrequested narrator.
+- [ ] Same voice identity, accent, timbre, pacing and locked VoiceChanger profile/settings as character bible; correct speaker.
+- [ ] For multi-character dialogue, run Video Split → Audio Save → VoiceChanger separately for each speaker; preserve source audio and original clip/timecode map.
+- [ ] Exact intended short dialogue; converted speech reinserted at the original timing with speaker lip-sync checked; no unrequested narrator.
 - [ ] No extra or missing people, duplicate characters, extra hands/fingers/limbs or malformed props.
 - [ ] **ZERO subtitles, captions, visible words, labels, glyphs, title cards, logos, watermarks or UI text.** Reject and correct any clip that fails.
 - [ ] Correct scene location, time, lighting, geometry and plausible movement.
@@ -42,6 +43,7 @@ Repeat for **every adjacent clip** and for part-to-part boundaries. When possibl
 - [ ] Clip-to-clip transitions preserve character movement and room geometry.
 - [ ] During driving sequences, the car continues traveling through every cut; there are no repeated stop/start beats, frozen scenery, route jumps, or changes to the vehicle/cabin/environment.
 - [ ] Voices remain matched and intelligible; music and sound effects do not overpower speech.
+- [ ] Replacement voice audio is synchronized from first word to last; check offsets and no drift across scene joins. Prevent doubled original dialogue while preserving room tone/ambience and SFX.
 - [ ] Room tone/ambience and score continuous where appropriate; no accidental resets at every cut.
 - [ ] No on-screen text or subtitle track added inadvertently.
 - [ ] Timeline duration calculated from actual trimmed clip lengths, not nominal planned lengths.
