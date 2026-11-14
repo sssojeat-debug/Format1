@@ -14,6 +14,9 @@ Create one immutable reference block per recurring character. Copy the same char
 - Characteristic expressions and gestures:
 - **Voice selection or voice-reference ID (when supported):**
 - **Voice lock:** language, accent, pitch, timbre, speaking rate, rhythm and emotional baseline:
+- **Unique VoiceChanger profile/target ID and approved reference-audio filename:**
+- **Locked conversion settings:** pitch, speed, loudness/normalization, and available strength/mix controls:
+- **Profile status:** sample approved? yes/no; same settings applied to every clip? yes/no
 - Dialogue: only assigned words, accurate lip-sync, listeners' mouths closed:
 - Prop ownership and carrying hand:
 - Current scene / screen position / facing / last pose:
@@ -21,9 +24,9 @@ Create one immutable reference block per recurring character. Copy the same char
 
 ## Voice matching table
 
-| Character ID | Voice selection/reference | Accent & timbre | Pacing and delivery | Last checked clip |
-|---|---|---|---|---|
-| [Name] | [ID or unavailable] | [Description] | [Description] | [Clip ID] |
+| Character ID | Source voice/reference | VoiceChanger profile ID | Pitch | Speed | Accent/timbre and delivery | Last checked clip |
+|---|---|---|---:|---:|---|---|
+| [Name] | [Reference file/ID] | [Unique target/profile] | [Value] | [Value] | [Description] | [Clip ID] |
 
 ## Vehicle and travel lock (when applicable)
 - Exact vehicle make/model, color, body shape and exterior details:
