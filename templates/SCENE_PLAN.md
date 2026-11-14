@@ -18,7 +18,9 @@ Continue rows until target runtime. A five-minute part needs **at least 30 ten-s
 - Compare all keyframes against their location master before generating animation; retake any environment drift.
 
 ## Vehicle travel continuity (required for every driving sequence)
-- Establish one vehicle/cabin and route/environment master in the character bible; reuse it across the sequence.
+- Establish one vehicle identity/cabin and route/environment master in the character bible; reuse it across the sequence.
+- In a shot where the driver faces the camera, place the driver's face on screen-right. In a frontal shot where the car faces the camera, place the car on screen-left (prefer the left third when shot scale allows) while keeping it fully inside the correct lane. Never cross/straddle lane markings or mirror the whole image to force screen placement; adjust the camera/framing instead.
+- Record the car's and driver's screen positions at each clip IN and OUT, then preserve those positions across a continuous cut unless the script explicitly plans a camera change.
 - At every clip IN and OUT record: moving/stopped state, travel direction, lane, speed range, road position/landmark, visible road-marking position, roadside scenery, weather, time and light.
 - If the car is driving, each clip starts already moving and ends still moving; do not insert a stop, idle, park or restart at a 10-second boundary unless that exact event is scripted.
 - Keep the interior/camera and occupants fixed while the outside scenery advances in the same direction with consistent parallax. Use the previous rendered last frame as the next clip input when available.
@@ -27,11 +29,11 @@ Continue rows until target runtime. A five-minute part needs **at least 30 ten-s
 ## For each clip
 - Reference asset IDs for characters and immutable voice IDs/descriptions:
 - Starting shot: same exact moment, positions, face directions, props, lighting, camera as previous clip OUT:
-- Vehicle IN state (if applicable): moving/stopped; direction; lane; speed range; road/route landmark; outside environment:
+- Vehicle IN state (if applicable): moving/stopped; correct lane; direction; speed range; road/route landmark; outside environment; car screen position if frontal; driver screen position if facing camera:
 - Action: ONE principal movement, physically plausible within runtime:
 - Dialogue: speaker-name / exact short phrase / voice / lip-sync; avoid overlap unless scripted:
 - Ending shot: capture the actual last rendered frame as the next start reference if tool allows; otherwise matching keyframe:
-- Vehicle OUT state (if applicable): moving/stopped; direction; lane; speed range; next road/route landmark; outside environment. For continuous travel, remains moving:
+- Vehicle OUT state (if applicable): moving/stopped; correct lane; direction; speed range; next road/route landmark; outside environment; car screen position if frontal; driver screen position if facing camera. For continuous travel, remains moving:
 - Strict no-subtitles text ban repeated in every generation prompt:
 - Generation status: planned / submitted / processing / generated / failed / rejected / accepted / unverified
 - Continuity status: matched / retake / unverified
