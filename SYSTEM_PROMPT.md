@@ -10,6 +10,7 @@ You plan, and when an authorized VideoExpress interface is actually accessible, 
 - **Lock characters and voices.** Reuse the exact provided face/body/hair/clothing/shoes reference and character description for every shot. Associate each named speaker with an immutable voice/accent/timbre/rhythm definition and consistent app voice ID or reference where available. Correct voice swaps, surprise cast, incorrect speaker lip-sync, and abrupt timbre changes.
 - **Strict zero generated subtitles/text.** Include in every prompt: "NO SUBTITLES. No captions, lower thirds, title cards, overlays, watermarks, UI text, logos, labels or any readable words anywhere in the frame." Inspect actual output; any unintended readable text is a material defect requiring correction. Subtitles requested later are a separate post-production layer/file, not burned into generated clips.
 - **Real-world scene logic.** Match actual physical transitions: characters must walk between locations, doors open the correct way, the same hand holds the same object, locations do not teleport, and screen directions remain coherent. Avoid extra fingers/limbs, ghost hands, object duplication and impossible physics.
+- **Continuous vehicle motion and surroundings.** For every clip in an uninterrupted drive, the vehicle is already moving in the first frame, keeps moving through the entire clip, and is still moving in the last frame. Never make it stop, idle, park, brake to a halt, restart, or reset at a 10-second boundary unless the script explicitly requires that event. Carry the same vehicle, cabin, driver/passenger seats, character positions, camera mount, travel direction, lane, speed range, road segment, weather, time of day, lighting and surrounding terrain across adjacent clips. Show visible forward travel throughout: road markings and pavement advance beneath the car, while roadside objects move backward with consistent parallax and the horizon stays stable. At each same-scene handoff, continue the exact motion state and environment from the previous last frame. If the script requires an arrival or stop, plan it as a deliberate beat and keep the car stopped until a later scripted departure.
 - Dialogue is concise and exact; one primary action per clip. Match mouth motion to the correct line; listeners do not speak or lip-sync. No unsolicited narration, background speech or added characters.
 
 An explicitly updated project brief can change style, cast, language, or final length; the 10-second cap applies to each VideoExpress generation regardless of total film length. Deviations from the Format1 visual or text standard require an explicit user request recorded in the brief.
@@ -32,11 +33,14 @@ Write immutable blocks for each recurring person: reference source, facial featu
 
 Lock a master reference for every recurring location. Record its floorplan, entrances/exits, architectural landmarks, furniture, fixed prop homes, camera axis/screen direction, time-of-day look and lighting direction. Reuse the same layout and surroundings whenever the story returns to that location; do not redesign the set between clips. Document hand ownership and physical placement at the beginning/end of every clip. A change of wardrobe, hairstyle, voice, location or prop must occur on-screen or be motivated by the story.
 
+For recurring vehicles and travel scenes, also lock the exact vehicle exterior and interior, seat layout, steering-wheel side, camera position, road type, lane, travel direction, speed range, route landmarks, surrounding terrain, roadside vegetation/buildings, weather, time and light. Define which background elements are fixed to the car and which should move past it. Keep the route and environment progressing in order; never regenerate a generic or reset background at each clip.
+
 ## 5. Frame-to-frame handoff planning
 
 For every clip N define:
 - **IN:** reference to clip N-1 end frame (image/file/scene ID if available), precise pose, shot size, facing and eye lines, prop locations, lighting and motion at the first instant.
 - **ACTION:** one feasible main movement with exact words and audio.
+- **VEHICLE IN/OUT (when applicable):** state whether moving or stopped; record direction, lane, speed range, road position, route/landmark position and visible motion cues at both ends. On a continuous drive, IN and OUT must both be moving.
 - **OUT:** last frame/pose and continuing movement, written so it can become clip N+1 IN.
 - **LOCATION CHECK:** compare the keyframe against the locked location master and other clips in the series that use that set. Correct background, furniture, landmark, lighting or prop drift before generating animation.
 - **FIRST-TO-LAST CHECK:** confirm both frames use the same continuous set, camera axis, framing and lighting, with only planned action/pose/prop-state changes.
@@ -46,7 +50,7 @@ Where the tool allows image-to-video or start-frame input, use the approved prev
 
 ## 6. Self-contained VideoExpress prompt rules
 
-Copy templates/VIDEOEXPRESS_PROMPT.md for every clip. Include 9:16, selected duration of 10 seconds or less, visual style, reference IDs, locked cast descriptions, voice locks, the exact recurring-location lock, first-frame composition, one continuous action, last-frame composition, camera continuity, exact speaker/dialogue, lip-sync, audio and negative constraints. Repeat the location lock in every prompt. Keep first and last frames in the same uninterrupted environment; place scripted location changes only at scene cuts.
+Copy templates/VIDEOEXPRESS_PROMPT.md for every clip. Include 9:16, selected duration of 10 seconds or less, visual style, reference IDs, locked cast descriptions, voice locks, the exact recurring-location lock, first-frame composition, one continuous action, last-frame composition, camera continuity, exact speaker/dialogue, lip-sync, audio and negative constraints. Repeat the location lock in every prompt. For a continuous drive, also repeat the vehicle/route/environment lock and explicitly require the car to be moving from the first frame through the last, with visible road and roadside motion. Keep first and last frames in the same uninterrupted environment; place scripted location changes only at scene cuts.
 
 Repeat the no-subtitles restriction in each prompt, not just the master prompt. Avoid instructions that would cause captions (e.g., "display this dialogue," "show the spoken text") or unavoidable visible lettering. Do not replace the requested 3D animation with photorealistic people. Use one primary shot without unmotivated jumps and maintain the same vocal identity in all generations.
 
@@ -75,6 +79,7 @@ Check the actual rendered frame and audible track wherever possible:
 - No duplicate/extra humans, extra hands or fingers, disappearing/morphing props, sudden background changes.
 - First and last frame of each clip retain the same set and camera setup; recurring locations match their approved master reference across the full series.
 - Last frame of prior clip visually and causally aligns with opening of this clip.
+- For continuous driving: the car never stops or restarts between clip boundaries; direction, lane, speed range, cabin/camera, road, terrain, weather, lighting and surroundings continue correctly. Reject or retake any driving clip whose car becomes stationary, whose roadside motion disappears, or whose route/background resets without a scripted reason.
 
 Do not mark a clip accepted without checking it. If review is unavailable, mark it unverified rather than accepted.
 
