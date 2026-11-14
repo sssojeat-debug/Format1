@@ -29,7 +29,7 @@ Create a beat map with explicit start/end times, using one row per video generat
 
 ## 4. Character, voice, location and prop bible
 
-Write immutable blocks for each recurring person: reference source, facial features, proportions, age appearance, hair, clothing, shoes, characteristic gestures, assigned voice selection/reference and verbal characteristics (language, accent, timbre, pitch, rate, delivery). Copy that block consistently into prompts. For scenes with multiple people, explicitly identify the single active speaker at any moment.
+Write immutable blocks for each recurring person: reference source, facial features, proportions, age appearance, hair, clothing, shoes, characteristic gestures, assigned voice selection/reference and verbal characteristics (language, accent, timbre, pitch, rate, delivery). Also record one VoiceChanger target/reference and fixed conversion settings per character in the character bible. Copy the same visual, source-voice and VoiceChanger profile block consistently into prompts and audio processing. For scenes with multiple people, explicitly identify the single active speaker at any moment.
 
 Lock a master reference for every recurring location. Record its floorplan, entrances/exits, architectural landmarks, furniture, fixed prop homes, camera axis/screen direction, time-of-day look and lighting direction. Reuse the same layout and surroundings whenever the story returns to that location; do not redesign the set between clips. Document hand ownership and physical placement at the beginning/end of every clip. A change of wardrobe, hairstyle, voice, location or prop must occur on-screen or be motivated by the story.
 
@@ -52,7 +52,7 @@ Where the tool allows image-to-video or start-frame input, use the approved prev
 
 Copy templates/VIDEOEXPRESS_PROMPT.md for every clip. Include 9:16, selected duration of 10 seconds or less, visual style, reference IDs, locked cast descriptions, voice locks, the exact recurring-location lock, first-frame composition, one continuous action, last-frame composition, camera continuity, exact speaker/dialogue, lip-sync, audio and negative constraints. Repeat the location lock in every prompt. For a continuous drive, also repeat the vehicle/route/environment lock and explicitly require the car to be moving from the first frame through the last, with visible road and roadside motion. Keep first and last frames in the same uninterrupted environment; place scripted location changes only at scene cuts.
 
-Repeat the no-subtitles restriction in each prompt, not just the master prompt. Avoid instructions that would cause captions (e.g., "display this dialogue," "show the spoken text") or unavoidable visible lettering. Do not replace the requested 3D animation with photorealistic people. Use one primary shot without unmotivated jumps and maintain the same vocal identity in all generations.
+Repeat the no-subtitles restriction in each prompt, not just the master prompt. Avoid instructions that would cause captions (e.g., "display this dialogue," "show the spoken text") or unavoidable visible lettering. Do not replace the requested 3D animation with photorealistic people. Use one primary shot without unmotivated jumps and maintain the same vocal identity in all generations. For multi-character dialogue, follow templates/VOICE_CONSISTENCY_WORKFLOW.md after clip generation: Video Split → Audio Save → VoiceChanger → replace and synchronize each character's audio.
 
 ## 7. Actual VideoExpress generation
 
@@ -85,7 +85,11 @@ Do not mark a clip accepted without checking it. If review is unavailable, mark 
 
 ## 9. Timeline assembly and final export
 
-Once approved clips are available, assemble in scene-number order with no missing, duplicated or swapped clips. Verify each pairwise join at the cut. Avoid filler, random fades, incompatible voice substitutions or a music reset at every clip. Balance music and SFX below speech; retain intelligible natural speech and consistent ambience. Use separate sound editing only if necessary and authorized.
+Once approved clips are available, assemble in scene-number order with no missing, duplicated or swapped clips. Verify each pairwise join at the cut. Avoid filler, random fades, incompatible voice substitutions or a music reset at every clip. Balance music and SFX below speech; retain intelligible natural speech and consistent ambience. Use separate sound editing only if necessary and authorized. For any multi-character dialogue, complete the reusable audio workflow below before final export.
+
+### Multi-character voice conversion and lip-sync (required when the cast has multiple speakers)
+
+Follow [templates/VOICE_CONSISTENCY_WORKFLOW.md](templates/VOICE_CONSISTENCY_WORKFLOW.md) in this exact order: **Video Split → Audio Save → VoiceChanger → replace/synchronize audio → review**. Keep one immutable, separately named VoiceChanger target/reference and settings row per character. Use the saved voice ID, pitch, speed, accent, loudness and available conversion controls unchanged across all clips; use the starter settings in that workflow only when the user has not selected another voice and the app exposes those controls. Preserve original audio and timecodes. Process each speaker separately, reinsert converted speech at the original timeline position, prevent doubled source speech, retain ambience/music/SFX separately, and verify mouth motion, word timing, clip boundaries and absence of sync drift after assembly and after export. If a tool or control is unavailable, state which stage is blocked and do not claim completion.
 
 Export the requested part as a **vertical 9:16 MP4**, target 1080 × 1920, with H.264/AAC when those output options are available. Choose a consistent frame rate supported by the editor; do not invent app menus or options. Inspect the actual exported MP4 for complete story, order, duration, image, audio, continuity, and zero unwanted text. If the requested final output is a one-hour movie, assemble or combine the approved parts only when supported and requested.
 
