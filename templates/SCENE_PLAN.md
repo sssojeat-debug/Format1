@@ -29,6 +29,7 @@ Continue rows until target runtime. A five-minute part needs **at least 30 ten-s
 ## For each clip
 - Reference asset IDs for characters and immutable voice IDs/descriptions:
 - Starting shot: same exact moment, positions, face directions, props, lighting, camera as previous clip OUT:
+- **Prop state IN/OUT:** for every recurring prop, record exact identity/count, location or holder/hand, orientation, visibility, and condition. State any visible scripted transition; a prop may not disappear and reappear or move between frames/cuts without that action. The next clip IN must match this clip OUT.
 - Vehicle IN state (if applicable): moving/stopped; correct lane; direction; speed range; road/route landmark; outside environment; car screen position if frontal; driver screen position if facing camera:
 - Action: ONE principal movement, physically plausible within runtime:
 - Dialogue: speaker-name / exact short phrase / voice / lip-sync; avoid overlap unless scripted:
