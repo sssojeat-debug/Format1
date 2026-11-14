@@ -32,7 +32,10 @@ Create one immutable reference block per recurring character. Copy the same char
 - Exact vehicle make/model, color, body shape and exterior details:
 - Cabin layout, seat positions, steering-wheel side, upholstery and fixed interior details:
 - Camera position/mount and framing:
-- Road type, lane, travel direction, speed range and route progression:
+- Road type, correct travel lane, driving side, speed range and route progression:
+- Approved vehicle identity/reference: same make/model or design, color, body shape, wheels, lights, cabin and fixed details across all clips:
+- Camera-facing composition lock: driver face/upper body on screen-right when looking toward camera; car on screen-left when its front faces the camera; keep car fully within correct lane:
+- Reference frame ID showing the approved frontal car/driver composition:
 - Surroundings: terrain, roadside landmarks/vegetation/buildings, sky, weather, time and light:
 - Motion cues visible from the camera (road markings advance; roadside scenery moves backward):
 - Clip N ending travel state and clip N+1 starting travel state:
