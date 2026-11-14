@@ -47,8 +47,15 @@ Create one immutable reference block per recurring character. Copy the same char
 - Entrances/exits / camera-side geometry:
 - Visible background restrictions:
 - Props: appearance, holder, exact hand or resting place:
+- Prop persistence rule: each recurring prop retains the same identity, count, appearance, holder/resting place, orientation, visibility, and condition until a visible, scripted action changes it. No unexplained disappearance/reappearance, duplication, materialization, or teleporting. For example, a chip bag stays in its established hand or seat across the shot and cut.
 - Last-frame snapshot/filename:
 - Expected next-clip opening frame/pose:
+
+### Recurring prop state ledger
+
+| Prop ID/name | Approved appearance/count | Clip IN state: holder/place, hand, orientation, visibility, condition | Visible scripted transition | Clip OUT state / next clip IN | Verified |
+|---|---|---|---|---|---|
+| [e.g., chip bag] | [brand/color/shape/count] | | | | |
 
 ## Continuity sign-off
 - Clip N ending pose, positions, prop ownership, dialogue tail and camera:
