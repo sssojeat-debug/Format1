@@ -66,7 +66,7 @@ Before export, play the assembled sequence and check all dialogue transitions. C
 
 - Every character has the correct, unique, unchanged voice profile in all scenes.
 - The line belongs to the intended speaker and the line is not clipped, duplicated, or assigned to a listener.
-- Pitch, speed, accent, timbre, and loudness remain stable across scene boundaries.
+- Pitch, speed, accent, timbre, and loudness remain stable across scene boundaries, including the last clip. Compare each character's final line with the approved reference and earlier lines; if it differs, reprocess that line with the same locked profile/settings and review again.
 - Converted speech stays synchronized from first mouth movement through the end of each line; there is no cumulative timing drift.
 - Source speech is not doubled, while required music, ambience, and SFX remain.
 - The final MP4 is reviewed for voice identity and lip-sync after export.
