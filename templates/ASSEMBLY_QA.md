@@ -25,6 +25,9 @@ For each generated clip:
 - [ ] **ZERO subtitles, captions, visible words, labels, glyphs, title cards, logos, watermarks or UI text.** Reject and correct any clip that fails.
 - [ ] Correct scene location, time, lighting, geometry and plausible movement.
 - [ ] Actual last frame recorded for next clip, where supported.
+- [ ] Vehicle identity and appearance match the approved vehicle reference across the clip set.
+- [ ] In front-facing car shots, the car is on screen-left and fully inside its correct lane; no centerline/lane-divider/shoulder straddling.
+- [ ] When the driver faces the camera, the driver appears on screen-right; seat and steering-wheel sides remain physically correct and the shot is not mirrored.
 - [ ] For continuous driving, the car is moving from the opening through the ending frame; visible road and roadside scenery move consistently, with no stop/start reset or route/environment jump.
 
 ## 2. Frame-to-frame handoffs
@@ -41,7 +44,7 @@ Repeat for **every adjacent clip** and for part-to-part boundaries. When possibl
 - [ ] All accepted clips placed in **scene-number order**, without duplicates, gaps, missing beats or accidental reversed clips.
 - [ ] Clip boundaries aligned; no frozen black frames or interrupted dialogue at joins.
 - [ ] Clip-to-clip transitions preserve character movement and room geometry.
-- [ ] During driving sequences, the car continues traveling through every cut; there are no repeated stop/start beats, frozen scenery, route jumps, or changes to the vehicle/cabin/environment.
+- [ ] During driving sequences, the same car continues traveling through every cut; there are no stop/start beats, frozen scenery, route jumps, or changes to the vehicle/cabin/environment. Camera-facing driver/car positions stay screen-right/screen-left, respectively, while the car remains in the correct lane.
 - [ ] Voices remain matched and intelligible; music and sound effects do not overpower speech.
 - [ ] Replacement voice audio is synchronized from first word to last; check offsets and no drift across scene joins. Prevent doubled original dialogue while preserving room tone/ambience and SFX.
 - [ ] Room tone/ambience and score continuous where appropriate; no accidental resets at every cut.
