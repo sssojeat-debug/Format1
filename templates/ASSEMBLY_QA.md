@@ -24,6 +24,7 @@ For each generated clip:
 - [ ] **ZERO subtitles, captions, visible words, labels, glyphs, title cards, logos, watermarks or UI text.** Reject and correct any clip that fails.
 - [ ] Correct scene location, time, lighting, geometry and plausible movement.
 - [ ] Actual last frame recorded for next clip, where supported.
+- [ ] For continuous driving, the car is moving from the opening through the ending frame; visible road and roadside scenery move consistently, with no stop/start reset or route/environment jump.
 
 ## 2. Frame-to-frame handoffs
 
@@ -32,13 +33,14 @@ For each generated clip:
 | 01 → 02 | | | | |
 | 02 → 03 | | | | |
 
-Repeat for **every adjacent clip** and for part-to-part boundaries. When possible, use preceding rendered last frame as the next starting image/reference. If not supported, compare frames visually and use a motivated edit; label exact continuity *unverified* unless validated. Ensure hand/prop ownership, speaking turn, screen direction, doors, travel and motion are continuous.
+Repeat for **every adjacent clip** and for part-to-part boundaries. When possible, use preceding rendered last frame as the next starting image/reference. If not supported, compare frames visually and use a motivated edit; label exact continuity *unverified* unless validated. Ensure hand/prop ownership, speaking turn, screen direction, doors, travel and motion are continuous. For a continuous drive, verify that the car does not stop or restart at the cut and that its direction, lane, speed range, road, vehicle interior, weather, lighting and surrounding scenery continue correctly.
 
 ## 3. Timeline assembly
 
 - [ ] All accepted clips placed in **scene-number order**, without duplicates, gaps, missing beats or accidental reversed clips.
 - [ ] Clip boundaries aligned; no frozen black frames or interrupted dialogue at joins.
 - [ ] Clip-to-clip transitions preserve character movement and room geometry.
+- [ ] During driving sequences, the car continues traveling through every cut; there are no repeated stop/start beats, frozen scenery, route jumps, or changes to the vehicle/cabin/environment.
 - [ ] Voices remain matched and intelligible; music and sound effects do not overpower speech.
 - [ ] Room tone/ambience and score continuous where appropriate; no accidental resets at every cut.
 - [ ] No on-screen text or subtitle track added inadvertently.
