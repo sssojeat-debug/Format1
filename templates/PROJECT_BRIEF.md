@@ -17,6 +17,8 @@ Fill only missing facts; reuse already supplied instructions and references. For
 - Canvas / target export: 9:16, 1080 × 1920
 - VideoExpress mode and confirmed capabilities:
 - Reference character images / project location:
+- Vehicle identity/reference, driving side and correct lane (if applicable):
+- Camera-facing layout: driver screen-right when facing camera; front-facing car screen-left while fully inside its correct lane; no mirroring:
 - Last-frame transfer: actual previous rendered final frame → next starting reference if supported; otherwise matching composition and verified join
 
 ## Character and voice locks
